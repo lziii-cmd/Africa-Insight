@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useLanguage } from "@/lib/i18n";
 
 export default function Navbar() {
@@ -34,16 +35,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-10 h-10 rounded-lg bg-[#C8102E] flex items-center justify-center">
-              <span className="text-white font-bold text-sm tracking-tight">AI</span>
-            </div>
-            <span
-              className={`font-bold text-base md:text-lg tracking-widest transition-colors ${
-                scrolled ? "text-[#1B3A6B]" : "text-white"
-              }`}
-            >
-              AFRICA INSIGHT
-            </span>
+            <Image
+              src="/logo.jpg"
+              alt="Africa Insight"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </a>
 
           {/* Desktop links */}

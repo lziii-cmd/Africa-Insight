@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/lib/i18n";
 
 export default function Footer() {
@@ -11,13 +12,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#C8102E] flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AI</span>
-            </div>
-            <div>
-              <div className="font-bold tracking-widest text-base">AFRICA INSIGHT</div>
-              <div className="text-white/35 text-xs mt-0.5">{t.footer.tagline}</div>
-            </div>
+            <Image
+              src="/logo.jpg"
+              alt="Africa Insight"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain brightness-0 invert"
+            />
+            <div className="text-white/35 text-xs">{t.footer.tagline}</div>
           </div>
 
           {/* Nav links */}
